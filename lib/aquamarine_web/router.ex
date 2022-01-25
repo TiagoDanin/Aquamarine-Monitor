@@ -7,6 +7,10 @@ defmodule AquamarineWeb.Router do
 
   scope "/api", AquamarineWeb do
     pipe_through :api
+
+    post "/income", IncomeController, :create
+    get "/incomes/:id", IncomeController, :show
+    get "/incomes", IncomeController, :index
   end
 
   # Enables LiveDashboard only for development
